@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="fmortgage" onsubmit=" return calculateMortgage ()" method="get"> 
+        <label for="fcuota">Cuota Inicial</label>
+        <input type="text" name="" id="fcuota">
+    
+        <label for="fvalortotal">Valor total inmueble</label>
+        <input type="text" name="" id="fvalortotal">
+
+        <label for="ftinteres">Tasa de Interes</label>
+        <input type="text" id="" name="ftinteres">
+
+        <label for="fplazo">Plazo a 12 meses</label>
+        <input type="text" name="" id="fplazo">
+
+        <button type="submit">Calcular</button>
+    </form>
+
+        <label for="omontoprestamo">Monto del prestamo</label>
+        <output id="omontoprestamo">0</output>
+
+        <label for="ocuota">Valor Cuota mensual</label>
+        <output id="cuota">0</output>
+        
+    <script src="./js/mortgage.js"></script>
+</body>
+</html>
