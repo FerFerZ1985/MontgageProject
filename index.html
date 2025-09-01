@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montgage</title>
+    <title>Inmogestion</title>
+    <link rel="stylesheet" href="./css/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+
 </head>
+
 <body>
-    <form action="" id="fmortgage" onsubmit=" return calculateMortgage ()" method="get"> 
-        <label for="fcuota">Cuota Inicial</label>
-        <input type="text" name="" id="fcuota">
     
-        <label for="fvalortotal">Valor total inmueble</label>
-        <input type="text" name="" id="fvalortotal">
+    <h1 class="text-primary text-uppercase fw-bolder">Calculo Hipotecario</h1>
 
-        <label for="ftinteres">Tasa de Interes</label>
-        <input type="text" id="" name="ftinteres">
+    <form action="" id="fmortgage" onsubmit=" return calculateMortgage ( event )" method="get" target="_self">
+        <div class="mb-3">
+            <label for="fcuota" class="form-label">Cuota Inicial</label>
+            <input type="text" name="" id="fcuota" class="form-control">
 
-        <label for="fplazo">Plazo a 12 meses</label>
-        <input type="text" name="" id="fplazo">
+            <label for="fvalortotal" class="form-label">Valor total inmueble</label>
+            <input type="text" name="" id="fvalortotal" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="ftinteres" class="form-label">Tasa Interes</label>
+            <input type="text" id="" name="ftinteres" class="form-control">
+
+            <label for="fplazo" class="form-label">Plazo a 12 meses</label>
+            <input type="text" name="" id="fplazo" class="form-control">
+        </div>
 
         <button type="submit">Calcular</button>
+        <button onclick="resetform()">Reinciar Formulario</button>
+
     </form>
 
+    <div>
         <label for="omontoprestamo">Monto del prestamo</label>
         <output id="omontoprestamo">0</output>
 
         <label for="ocuota">Valor Cuota mensual</label>
-        <output id="cuota">0</output>
-        
+        <output id="ocuota">0</output>
+    </div>
+
     <script src="./js/mortgage.js"></script>
+    <script src="./css/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
