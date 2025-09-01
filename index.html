@@ -9,38 +9,53 @@
 
 </head>
 
-<body>
-    
-    <h1 class="text-primary text-uppercase fw-bolder">Calculo Hipotecario</h1>
+<body class="bg-dark">
+    <h1 class="text-primary">Inmogestion S.A.</h1>
+    <div class="container p-2">
+        <div class="card mx-3 mt-n5 shadow-lg"
+            style="border-radius: 10px; border-left: 8px #007bff solid; border-right: none; border-bottom: none;">
+            <div class="card-body">
+                <h3 class="text-primary text-uppercase fw-bolder mb-3">Calculo Hipotecario</h3>
 
-    <form action="" id="fmortgage" onsubmit=" return calculateMortgage ( event )" method="get" target="_self">
-        <div class="mb-3">
-            <label for="fcuota" class="form-label">Cuota Inicial</label>
-            <input type="text" name="" id="fcuota" class="form-control">
+                <form action="" id="fmortgage" onsubmit=" return calculateMortgage ( event )" method="get"
+                    target="_self">
+                    <div class="row">
+                        <div class="col">
+                            <label for="fcuota" class="form-label">Cuota Inicial</label>
+                            <input type="text" name="" id="fcuota" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="fvalortotal" class="form-label">Valor total inmueble</label>
+                            <input type="text" name="" id="fvalortotal" class="form-control">
+                        </div>
+                    </div>
 
-            <label for="fvalortotal" class="form-label">Valor total inmueble</label>
-            <input type="text" name="" id="fvalortotal" class="form-control">
+                    <div class="row">
+                        <div class="col">
+                            <label for="ftinteres" class="form-label">Tasa Interes</label>
+                            <input type="text" id="" name="ftinteres" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="fplazo" class="form-label">Plazo a 12 meses</label>
+                            <input type="text" name="" id="fplazo" class="form-control">
+                        </div>
+                    </div>
+                    </br>
+                    <button type="submit" class="btn btn-primary" style="border-radius: 4px;">Calcular</button>
+                    <button class="btn btn-primary" style="border-radius: 4px;" onclick="resetform()">Limpiar</button>
+
+                </form>
+            </div>
         </div>
+    </div>
+    </br>
+    <div class="container p-2">
+        <h1 class="text-primary text-uppercase fw-bolder mb-4 ms-4">Resultado</h1>
+        <label class="text-warning" for="omontoprestamo">Monto del prestamo</label>
+        <output class="form-control" id="omontoprestamo">0</output>
 
-        <div class="mb-3">
-            <label for="ftinteres" class="form-label">Tasa Interes</label>
-            <input type="text" id="" name="ftinteres" class="form-control">
-
-            <label for="fplazo" class="form-label">Plazo a 12 meses</label>
-            <input type="text" name="" id="fplazo" class="form-control">
-        </div>
-
-        <button type="submit">Calcular</button>
-        <button onclick="resetform()">Reinciar Formulario</button>
-
-    </form>
-
-    <div>
-        <label for="omontoprestamo">Monto del prestamo</label>
-        <output id="omontoprestamo">0</output>
-
-        <label for="ocuota">Valor Cuota mensual</label>
-        <output id="ocuota">0</output>
+        <label class="text-warning" for="ocuota">Valor Cuota mensual</label>
+        <output class="form-control" id="ocuota">0</output>
     </div>
 
     <script src="./js/mortgage.js"></script>
