@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <title>Inmogestion</title>
 </head>
-<body>
-    <form action="" name="fcontact" onsubmit="processContactForm (event)" target="_self" method="get">
-        
-        <label for="fnames">Names</label>
-        <input type="text" id="fnames">
-        <label for="fsurname">Last Name</label>
-        <input type="text" id="fsurname">
 
-
-        <label for="fphone">Phone Number</label>
-        <input type="text" id="fphone">
-        <label for="femail">Mail</label>
-        <input type="text" id="femail">
-        <label for="fcity">City</label>
-        <input type="text" id="fcity">
-        <label for="fcountry">Country</label>
-        <input type="text" id="fcountry">
-
-        <button style="border-radius: 8px" type="submit">Guardar</button>
-    </form>
-
+<body class="bg-dark">
+    <h1 class="text-primary">Inmogestion S.A.</h1>
+    <div class="container p-2">
+        <div class="card mx-3 mt-n5 shadow-lg"
+            style="border-radius: 10px; border-left: 8px #007bff solid; border-right: none; border-bottom: none;">
+            <div class="card-body">
+                <h3 class="text-primary text-uppercase fw-bolder mb-3">Datos Personales</h3>
+                <form action="" name="fcontact" onsubmit="processContactForm (event)" target="_self" method="get">
+                    <div class="row">
+                        <div class="col">
+                            <label for="fnames" class="form-label">Names</label>
+                            <input type="text" id="fnames" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="fsurname" class="form-label">Last Name</label>
+                            <input type="text" id="fsurname" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="fphone" class="form-label">Phone Number</label>
+                            <input type="text" id="fphone" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="femail" class="form-label">Mail</label>
+                            <input type="text" id="femail" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="fcity" class="form-label">City</label>
+                            <input type="text" id="fcity" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="fcountry" class="form-label">Country</label>
+                            <input type="text" id="fcountry" class="form-control">
+                        </div>
+                    </div>
+                </br>
+                    <button style="border-radius: 8px" class="btn btn-primary" type="submit">Guardar</button>
+                    <button style="border-radius: 8px" class="btn btn-primary" type="button" onclick="window.location.href='../index.html'">Atras</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="../js/contact.js"></script>
+    <script src="./css/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
