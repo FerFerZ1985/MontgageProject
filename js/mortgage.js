@@ -23,14 +23,18 @@ function calculateMortgage( event ) {
 }  
 
 function outputMorgage ( finalMortgage ) {    
-    document.getElementById ( "omontoprestamo" ).innerHTML = finalMortgage.totalPrestamo;
-    document.getElementById ( "ocuota" ).innerHTML = finalMortgage.cuotaMensual;
+    document.getElementById ( "omontoprestamo" ).innerHTML = valueToDollar ( finalMortgage.totalPrestamo );
+    document.getElementById ( "ocuota" ).innerHTML = valueToDollar ( finalMortgage.cuotaMensual );
 }
 
 function resetform(){
     document.forms["fmortgage"].reset();
 }
 
+function valueToDollar ( value ) {
+    const dollarformatter = new Intl.NumberFormat ( "en-US", { style:'currency' ,currency:'USD' ,minimumFractionDigits:2});
+    return dollarformatter.format ( value );
+}
 
 
 
