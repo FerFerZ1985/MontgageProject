@@ -10,11 +10,13 @@ function calculateMortgage( event ) {
     const MONTHS_ON_YEAR = 12;
 
     const mortgage = {
+        costoTotalInmueble: 0,
         totalPrestamo: 0,
         totalInteres: 0,
         cuotaMensual: 0
     };
 
+    mortgage.costoTotalInmueble = costoTotal;
     mortgage.totalPrestamo = costoTotal - cuota;
     mortgage.totalInteres = mortgage.totalPrestamo * interes / 100;
     mortgage.cuotaMensual = ( mortgage.totalPrestamo + mortgage.totalInteres ) / ( plazoAnio * MONTHS_ON_YEAR );
@@ -25,6 +27,9 @@ function calculateMortgage( event ) {
 function outputMortgage ( finalMortgage ) {    
     document.getElementById ( "omontoprestamo" ).innerHTML = valueToDollar ( finalMortgage.totalPrestamo );
     document.getElementById ( "ocuota" ).innerHTML = valueToDollar ( finalMortgage.cuotaMensual );
+    var totalPrestamoPorcentaje = 0;
+    totalPrestamoPorcentaje = finalMortgage,totalPrestamo * 100 / finalMortgage.costoTotalInmueble;
+    alert (totalPrestamoPorcentaje);
 }
 
 function resetform(){
