@@ -18,11 +18,11 @@ function calculateMortgage( event ) {
     mortgage.totalPrestamo = costoTotal - cuota;
     mortgage.totalInteres = mortgage.totalPrestamo * interes / 100;
     mortgage.cuotaMensual = ( mortgage.totalPrestamo + mortgage.totalInteres ) / ( plazoAnio * MONTHS_ON_YEAR );
-    outputMorgage ( mortgage );
+    outputMortgage ( mortgage );
 
 }  
 
-function outputMorgage ( finalMortgage ) {    
+function outputMortgage ( finalMortgage ) {    
     document.getElementById ( "omontoprestamo" ).innerHTML = valueToDollar ( finalMortgage.totalPrestamo );
     document.getElementById ( "ocuota" ).innerHTML = valueToDollar ( finalMortgage.cuotaMensual );
 }
