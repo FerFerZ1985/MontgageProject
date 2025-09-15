@@ -18,38 +18,44 @@
                 <form action="" name="fcontact" onsubmit="processContactForm (event)" target="_self" method="get">
                     <div class="row">
                         <div class="col">
-                            <label for="fnames" class="form-label">Names</label>
+                            <label for="fnames" class="form-label">Nombres</label>
                             <input type="text" id="fnames" class="form-control">
                         </div>
                         <div class="col">
-                            <label for="fsurname" class="form-label">Last Name</label>
+                            <label for="fsurname" class="form-label">Apellidos</label>
                             <input type="text" id="fsurname" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label for="fphone" class="form-label">Phone Number</label>
+                            <label for="fphone" class="form-label">Telefono</label>
                             <input type="text" id="fphone" class="form-control">
                         </div>
                         <div class="col">
-                            <label for="femail" class="form-label">Mail</label>
+                            <label for="femail" class="form-label">Email</label>
                             <input type="text" id="femail" class="form-control">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label for="fcity" class="form-label">City</label>
+                            <label for="fcity" class="form-label">Ciudad</label>
                             <input type="text" id="fcity" class="form-control">
                         </div>
                         <div class="col">
-                            <label for="fcountry" class="form-label">Country</label>
+                            <label for="fcountry" class="form-label">Pais</label>
                             <input type="text" id="fcountry" class="form-control">
                         </div>
                     </div>
-                </br>
+                    </br>
                     <button style="border-radius: 8px" class="btn btn-primary" type="submit">Guardar</button>
-                    <button style="border-radius: 8px" class="btn btn-primary" type="button" onclick="window.location.href='../index.html'">Atras</button>
+                    <button style="border-radius: 8px" class="btn btn-primary" type="button"
+                        onclick="window.location.href='../index.html'">Atras</button>
+
+                    <button style="border-radius: 8px" class="btn btn-primary" type="button" onclick="listarcontactos()"">Listar</button>
                 </form>
+            </div>
+            <div id=" tablecontact">
+
             </div>
         </div>
     </div>
