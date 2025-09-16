@@ -9,7 +9,7 @@ const persona = {
 
 let personaArray = []
 
-function processContactForm(event) {
+function processContactForm(e) {
     persona.nombres = document.forms["fcontact"]["fnames"].value
     persona.apellidos = document.forms["fcontact"]["fsurname"].value
     persona.telefono = document.forms["fcontact"]["fphone"].value
@@ -21,29 +21,39 @@ function processContactForm(event) {
 
     personaArray.push(personajson);
 
-    event.preventDeFault();
+    e.preventDefault();
     alert("Datos guardados con exito" + personaArray.toString());
 
 }
 
 function listarcontactos() {
     let dinmicTable = "";
-    dinmicTable += "<table>";
+    dinmicTable += "<table class='table'>";
     dinmicTable += "<tr>";
-    dinmicTable += "<th>Company</th>";
-    dinmicTable += "<th>Contact</th>";
-    dinmicTable += "<th>Country</th>";
+    dinmicTable += "<th>Nombres</th>";
+    dinmicTable += "<th>Apellido</th>";
+    dinmicTable += "<th>Telefono</th>";
+    dinmicTable += "<th>Email</th>";
+    dinmicTable += "</tr>";
+
+for(let i= 0; i < personaArray.length;i++){
+    dinmicTable += "<tr>";
+    let personaobjecto = JSON.parse (personaArray[i]);
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.nombres;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.apellidos;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.telefono;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += personaobjecto.email;
+    dinmicTable += "</td>";
     dinmicTable += "</tr>";
     dinmicTable += "<tr>";
-    dinmicTable += "<td>Alfreds Futterkiste</td>";
-    dinmicTable += "<td>Maria Anders</td>";
-    dinmicTable += "<td>Germany</td>";
-    dinmicTable += "</tr>";
-    dinmicTable += "<tr>";
-    dinmicTable += "<td>Centro comercial Moctezuma</td>";
-    dinmicTable += "<td>Francisco Chang</td>";
-    dinmicTable += "<td>Mexico</td>";
-    dinmicTable += "</tr>";
+}
     dinmicTable += "</table>";
     document.getElementById("tablecontact").innerHTML = dinmicTable;
 }
