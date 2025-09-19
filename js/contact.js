@@ -36,12 +36,13 @@ function listarcontactos() {
     dinmicTable += "<th>Apellido</th>";
     dinmicTable += "<th>Telefono</th>";
     dinmicTable += "<th>Email</th>";
+    dinmicTable += "<th>Accion</th>";
     dinmicTable += "</tr>";
 
 let personasGuardadas = allstorge();    
 for(let i=0; i < personasGuardadas.length;i++){
     dinmicTable += "<tr>";
-    let personaobjecto = JSON.parse (personaArray[i]);
+    let personaobjecto = JSON.parse (personasGuardadas[i]);
     dinmicTable += "<td>";
     dinmicTable += personaobjecto.id;
     dinmicTable += "</td>";
@@ -56,6 +57,9 @@ for(let i=0; i < personasGuardadas.length;i++){
     dinmicTable += "</td>";
     dinmicTable += "<td>";
     dinmicTable += personaobjecto.email;
+    dinmicTable += "</td>";
+    dinmicTable += "<td>";
+    dinmicTable += '<a href="https://www.w3schools.com">Ver</a>'
     dinmicTable += "</td>";
     dinmicTable += "</tr>";
     dinmicTable += "<tr>";
