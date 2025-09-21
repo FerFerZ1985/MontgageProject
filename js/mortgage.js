@@ -1,9 +1,15 @@
 
-function calculateMortgage(event) {
+function calcualteMortgage(e) {
 
-    event.preventDefault();
 
-    let cuota = document.forms["fmortgage"]["fcuota"].value;
+    // este metodo previene el comportamioento por defecto del formulario
+    e.preventDefault();
+
+    /*
+    recuiperar el valor de los elementos de formulario
+    debo indicar el api del DOM 
+    */
+    let couta = document.forms["fmortgage"]["fcouta"].value;
     let costoTotal = document.forms["fmortgage"]["fvalortotal"].value;
     let interes = document.forms["fmortgage"]["ftinteres"].value;
     let plazoAnio = document.forms["fmortgage"]["fplazo"].value;
@@ -15,23 +21,25 @@ function calculateMortgage(event) {
         totalInteres: 0,
         cuotaMensual: 0
     };
-
     mortgage.costoTotalInmueble = costoTotal;
-    mortgage.totalPrestamo = costoTotal - cuota;
+    mortgage.totalPrestamo = costoTotal - couta;
     mortgage.totalInteres = mortgage.totalPrestamo * interes / 100;
     mortgage.cuotaMensual = (mortgage.totalPrestamo + mortgage.totalInteres) / (plazoAnio * MONTHS_ON_YEAR);
-    outputMortgage(mortgage);
+
+
+    ouputMortgage(mortgage);
 
 }
 
-function outputMortgage(finalMortgage) {
-    document.getElementById("omontoprestamo").innerHTML = valueToDollar(finalMortgage.totalPrestamo);
-    document.getElementById("ocuota").innerHTML = valueToDollar(finalMortgage.cuotaMensual);
+function ouputMortgage(finalMortgage) {
+
+    document.getElementById("omontoprestamo").innerHTML = ValueToDollar(finalMortgage.totalPrestamo);
+    document.getElementById("ocuota").innerHTML = ValueToDollar(finalMortgage.cuotaMensual);
     var totalPrestamoPorcentaje = 0;
     totalPrestamoPorcentaje = finalMortgage.totalPrestamo * 100 / finalMortgage.costoTotalInmueble;
     alert(totalPrestamoPorcentaje);
     if (totalPrestamoPorcentaje > 90) {
-        document.getElementById("omontoprestamo").className += " alertaporcentaje";
+        document.getElementById("omontoprestamo").className += " alertaPorcentaje";
     } else {
         document.getElementById("omontoprestamo").className = "form-control";
     }
@@ -41,10 +49,11 @@ function resetform() {
     document.forms["fmortgage"].reset();
 }
 
-function valueToDollar(value) {
-    const dollarformatter = new Intl.NumberFormat("en-US", { style: 'currency', currency: 'USD', minimumFractionDigits: 2 });
-    return dollarformatter.format(value);
-}
 
+function ValueToDollar(value) {
+    const dollarformatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 });
+    return dollarformatter.format(value);
+
+}
 
 
